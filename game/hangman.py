@@ -17,13 +17,13 @@ while(leterLength != correct and totalChance != 0):
   print(f"Your total chance is {totalChance}")
   userInput = input('Please enter the word : ').lower()
   check = userInput in checkWords
-  if(not check):
+  if(not check or userInput != ''):
     totalChance-=1
   else:
     index = checkWords.index(userInput)
     print('index', index)
     fill[index] = userInput
-    checkWords[index] = '_'
+    checkWords[index] = ''
     correct+=1;
 
 clear()
